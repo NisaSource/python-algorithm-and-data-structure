@@ -30,3 +30,11 @@ def consonantSum(inputStr):
 print(consonantSum(str1))
 print(consonantSum(str2))
 print(consonantSum(str3))
+
+
+# check palindrome word
+
+def isPalindrome(inputStr):
+    return len(inputStr) < 2 or inputStr[0] == inputStr[-1] and isPalindrome(inputStr[1:-1])
+
+print(isPalindrome("mom"))
