@@ -158,3 +158,24 @@ def squareRootInt(n):
     return start - 1
 
 print(squareRootInt(N))
+
+# 6. CYCLICALLY SORTED ARRAY ALGORITHM
+# write a function that determines te index of the smallest
+# element of the cyclically sorted array
+
+A = [6,7,8,9,3,4,5] # return 4
+
+def findIdx(a):
+    start = 0
+    end = len(a) - 1
+
+    while start < end:
+        mid = (start + end) // 2
+
+        if a[mid] > a[end]:
+            start = mid + 1
+        elif a[mid] <= a[end]:
+            end = mid
+    return start
+
+print(findIdx(A))
