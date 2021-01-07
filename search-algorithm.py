@@ -138,3 +138,23 @@ print(findHighestNumber(B))
 print(findHighestNumber(C))
 
 
+# 5. SQUARE ROOT ALGORITHM
+
+N = 90 # return 9, bcs 9*9 = 81 which is the closest to 90
+
+# Using Binary Search
+def squareRootInt(n):
+    start = 0
+    end = n
+
+    while start <= end:
+        mid = (start + end) // 2
+        midSquared = mid * mid
+
+        if midSquared <= n:
+            start = mid + 1
+        else:
+            end = mid - 1
+    return start - 1
+
+print(squareRootInt(N))
