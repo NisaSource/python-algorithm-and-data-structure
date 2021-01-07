@@ -1,7 +1,9 @@
+
 data = [2,5,7,8,9,13,16,18,23,27,36]
 num = 16
 
-# Linear Search
+# 1. FIND VALUE IN AN ARRAY
+# Using Linear Search
 def linarSearch(data, num):
     for i in range(len(data)):
         if data[i] == num:
@@ -10,7 +12,7 @@ def linarSearch(data, num):
 
 print(linarSearch(data, num))
 
-# Binary Search
+# Using Binary Search
 def binarySearch(data, num):
     start = 0
     end = len(data) - 1
@@ -28,8 +30,8 @@ def binarySearch(data, num):
 print(binarySearch(data, num))
 
 
-# Find Closest Number using Binary Search
-
+# 2. FIND CLOSEST NUMBER
+# Using Binary Search
 def findClosestNumber(arr, num):
     minDiff = float("inf")
     start = 0
@@ -68,3 +70,40 @@ def findClosestNumber(arr, num):
 
 
 print(findClosestNumber(data, 40))
+
+# 3. FIND FIXED POINT
+# Fixed point -> same value of A[i] and i
+
+A = [-3,0,2,5,8,9] # return 2
+A1 =  [-1,2,3,5,7,9] # return None
+
+# Using Linear Search
+def findFixedPoint(a):
+    for i in range(len(a)):
+        if a[i] == i:
+            return a[i]
+    return None
+print(findFixedPoint(A))
+print(findFixedPoint(A1))
+
+# Using Binary Search
+def findFixedPointBinarySearch(a):
+    start = 0
+    end = len(a) - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+
+        if a[mid] < mid:
+            start = mid + 1
+        elif a[mid] > mid:
+            end = mid - 1
+        else:
+            return a[mid]
+    return None
+
+print(findFixedPointBinarySearch(A))
+print(findFixedPointBinarySearch(A1))
+
+
+
