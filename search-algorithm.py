@@ -106,4 +106,35 @@ print(findFixedPointBinarySearch(A))
 print(findFixedPointBinarySearch(A1))
 
 
+# 4. FIND HIGHEST NUMBER FROM BITONIC SEQUENCE
+# Bitonic sequence -> [1,2,3,4,5,4,3,2,1]
+
+A = [1,2,3,4,3,2,1] # return 4
+B = [1,2,3,1] # rerurn 3
+C = [1,7,6,5,4,3,2,1] # return 7
+
+#Using Binary search
+def findHighestNumber(a):
+    # Check lenght of the seq should be at least 3
+    if len(a) < 3: return None
+
+    start = 0
+    end = len(a) - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+        left = a[mid - 1] if mid - 1 > 0 else float("-inf")
+        right = a[mid + 1] if mid + 1 < len(a) else float("inf")
+
+        if left < a[mid] and right > a[mid]:
+            start = mid + 1
+        elif left > a[mid] and right < a[mid]:
+            end = mid - 1
+        elif left < a[mid] and right < a[mid]:
+            return a[mid]
+
+print(findHighestNumber(A))
+print(findHighestNumber(B))
+print(findHighestNumber(C))
+
 
