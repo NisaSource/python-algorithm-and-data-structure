@@ -15,7 +15,7 @@ print(firstUpperCase(str1))
 print(firstUpperCase(str2))
 print(firstUpperCase(str3))
 
-# Count consonant in the string
+# 2. Count consonant in the string
 
 vowels = ["a","i","u","e","o"]
 
@@ -32,9 +32,21 @@ print(consonantSum(str2))
 print(consonantSum(str3))
 
 
-# check palindrome word
+# 3. Check palindrome word
 
 def isPalindrome(inputStr):
     return len(inputStr) < 2 or inputStr[0] == inputStr[-1] and isPalindrome(inputStr[1:-1])
 
 print(isPalindrome("mom"))
+
+
+# 4. Sum of Digits
+
+def sumOfDigits(n):
+    assert n >= 0 and int(n) == n , "ONLY POSITIVE NUMBER!"
+    if n == 0:
+        return 0
+    else:
+        return int(n % 10) + sumOfDigits(int(n/10))
+
+print(sumOfDigits(12))
