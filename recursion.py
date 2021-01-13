@@ -69,3 +69,22 @@ def powerOfNum(n, e):
     return n * powerOfNum(n, e-1)
 
 print(powerOfNum(3, 4))
+
+
+# 6. Great Common Divisor (GCD)
+
+# A = 20, B = 12 return 4
+# A = 326, B = 278 return 2
+
+def greatCommonDivisor(a, b):
+    assert int(a) == a and int(b) == b, "ONLY POSITIVE INTEGER!"
+    if a < 0:
+        a *= -1
+    if b < 0:
+        b *= -1
+    if b == 0:
+        return a
+    else:
+        return greatCommonDivisor(b, a % b)
+
+print(greatCommonDivisor(326, 278))
