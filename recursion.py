@@ -42,6 +42,9 @@ print(isPalindrome("mom"))
 
 # 4. Sum of Digits
 
+# N = 12 return 3
+# N = 123 return 6
+
 def sumOfDigits(n):
     assert n >= 0 and int(n) == n , "ONLY POSITIVE NUMBER!"
     if n == 0:
@@ -50,3 +53,19 @@ def sumOfDigits(n):
         return int(n % 10) + sumOfDigits(int(n/10))
 
 print(sumOfDigits(12))
+
+
+# 5. Calculate the power of number
+
+# N = 2, E = 3 return 8
+# N = 3, E = 4 return 81
+
+def powerOfNum(n, e):
+    assert e >= 0 and int(e) == e, "ONLY POSITIVE NUMBER!"
+    if e == 0:
+        return 1
+    if e == 1:
+        return n
+    return n * powerOfNum(n, e-1)
+
+print(powerOfNum(3, 4))
