@@ -106,10 +106,25 @@ print(decimalToBinary(10))
 
 S = "python" # return "nohtyp"
 
-def reverse(strng):
+def reverseStr(strng):
     if len(strng) <= 1:
         return strng
     print(strng[0:len(strng)-1])
-    return strng[len(strng) - 1] + reverse(strng[0:len(strng)-1])
+    return strng[len(strng) - 1] + reverseStr(strng[0:len(strng)-1])
 
-print(reverse(S))
+print(reverseStr(S))
+
+# 8. Palindrome
+
+string1 = "awesome" # return false
+string2 = "tacocat" # return true 
+
+def isPalindrome(s):
+    if len(s) == 0:
+        return True
+    if s[0] != s[len(s)-1]:
+        return False
+    return isPalindrome(s[1:-1])
+
+print(isPalindrome(string1))
+print(isPalindrome(string2))
