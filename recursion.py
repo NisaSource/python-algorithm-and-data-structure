@@ -170,3 +170,19 @@ def flatten(a):
 
 print(flatten(a1))
 print(flatten(a2))
+
+
+# 11. Write a recursive function called capitalizeFirst. Given an array
+# of strings, capitalize the first letter of each string in the array.
+
+A = ["cat", "dog", "monkey"] # return ["Cat", "Dog", "Monkey"]
+
+def capitalizeFirst(a):
+    result = []
+    if len(a) == 0:
+        return result
+    str = a[0]
+    result.append(str[0].upper() + str[1:])
+    return result + capitalizeFirst(a[1:])
+
+print(capitalizeFirst(A))
