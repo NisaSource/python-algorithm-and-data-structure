@@ -151,3 +151,22 @@ def someRecursive(arr, cb):
 
 print(someRecursive(arr1, isOdd))
 print(someRecursive(arr2, isOdd))
+
+
+# 10. Write a recursive function called flatten which accepts an array of arrays and return
+# a new array with all values flattened.
+
+a1 = [1,2,3,[4,5,6,7]] # return [1,2,3,4,5,6,7]
+a2 = [1,2,[3,[4,5],6,7]] # return [1,2,3,4,5,6,7]
+
+def flatten(a):
+    result = []
+    for item in a:
+        if type(item) is list:
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+print(flatten(a1))
+print(flatten(a2))
