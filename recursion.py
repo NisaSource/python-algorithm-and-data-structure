@@ -101,3 +101,15 @@ def decimalToBinary(n):
     return (n % 2) + (10 * decimalToBinary(int(n / 2)))
 
 print(decimalToBinary(10))
+
+# 8. String Reverse
+
+S = "python" # return "nohtyp"
+
+def reverse(strng):
+    if len(strng) <= 1:
+        return strng
+    print(strng[0:len(strng)-1])
+    return strng[len(strng) - 1] + reverse(strng[0:len(strng)-1])
+
+print(reverse(S))
