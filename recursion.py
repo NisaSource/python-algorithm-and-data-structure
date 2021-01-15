@@ -128,3 +128,26 @@ def isPalindrome(s):
 
 print(isPalindrome(string1))
 print(isPalindrome(string2))
+
+
+""" 9. Write a recursive function called someRecursive which accepts an array and a callback.
+The function returns true if a single value in the array returns true when passed to the
+callback. Otherwise it returns false. """
+
+arr1 = [1,2,3,4] # return true
+arr2 = [2,4,6,8] # return false
+
+def isOdd(n):
+    if n % 2 == 0:
+        return False
+    return True
+
+def someRecursive(arr, cb):
+    if len(arr) == 0:
+        return False
+    if not (cb(arr[0])):
+        return someRecursive(arr[1:], cb)
+    return True
+
+print(someRecursive(arr1, isOdd))
+print(someRecursive(arr2, isOdd))
