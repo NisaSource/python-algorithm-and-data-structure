@@ -208,3 +208,20 @@ def nestedEvenSum(obj, sum=0):
     return sum
 
 print(nestedEvenSum(obj1))
+
+# 13. Write a function called stringifyNumbers which takes an object and finds all
+# of the values which are numbers and converts them to strings.
+
+obj2 = { "num": 1, "test": [], "data": {"val": 4, "info": {"isRight": True, "random": 66}}}
+# return { "num": "1", "test": [], "data": {"val": "4", "info": {"isRight": True, "random": "66"}}}
+
+def stringifyNumbers(obj):
+    newObj = obj
+    for k in newObj:
+        if type(newObj[k]) is int:
+            newObj[k] = str(newObj[k])
+        elif type(newObj[k]) is dict:
+            newObj[k] = stringifyNumbers(newObj[k])
+    return newObj
+
+print(stringifyNumbers(obj2))
