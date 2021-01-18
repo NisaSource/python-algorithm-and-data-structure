@@ -11,9 +11,9 @@ def firstUpperCase(inputStr, idx = 0):
         return "No uppercase"
     return firstUpperCase(inputStr, idx + 1)
 
-print(firstUpperCase(str1))
-print(firstUpperCase(str2))
-print(firstUpperCase(str3))
+# print(firstUpperCase(str1))
+# print(firstUpperCase(str2))
+# print(firstUpperCase(str3))
 
 # 2. Count consonant in the string
 
@@ -27,9 +27,9 @@ def consonantSum(inputStr):
     else:
         return consonantSum(inputStr[1:])
 
-print(consonantSum(str1))
-print(consonantSum(str2))
-print(consonantSum(str3))
+# print(consonantSum(str1))
+# print(consonantSum(str2))
+# print(consonantSum(str3))
 
 
 # 3. Check palindrome word
@@ -37,7 +37,7 @@ print(consonantSum(str3))
 def isPalindrome(inputStr):
     return len(inputStr) < 2 or inputStr[0] == inputStr[-1] and isPalindrome(inputStr[1:-1])
 
-print(isPalindrome("mom"))
+# print(isPalindrome("mom"))
 
 
 # 4. Sum of Digits
@@ -52,7 +52,7 @@ def sumOfDigits(n):
     else:
         return int(n % 10) + sumOfDigits(int(n/10))
 
-print(sumOfDigits(12))
+# print(sumOfDigits(12))
 
 
 # 5. Calculate the power of number
@@ -68,7 +68,7 @@ def powerOfNum(n, e):
         return n
     return n * powerOfNum(n, e-1)
 
-print(powerOfNum(3, 4))
+# print(powerOfNum(3, 4))
 
 
 # 6. Great Common Divisor (GCD)
@@ -87,7 +87,7 @@ def greatCommonDivisor(a, b):
     else:
         return greatCommonDivisor(b, a % b)
 
-print(greatCommonDivisor(326, 278))
+# print(greatCommonDivisor(326, 278))
 
 
 # 7. Decimal to Binary
@@ -100,7 +100,7 @@ def decimalToBinary(n):
         return 0
     return (n % 2) + (10 * decimalToBinary(int(n / 2)))
 
-print(decimalToBinary(10))
+# print(decimalToBinary(10))
 
 # 8. String Reverse
 
@@ -112,7 +112,7 @@ def reverseStr(strng):
     print(strng[0:len(strng)-1])
     return strng[len(strng) - 1] + reverseStr(strng[0:len(strng)-1])
 
-print(reverseStr(S))
+# print(reverseStr(S))
 
 # 8. Palindrome
 
@@ -126,8 +126,8 @@ def isPalindrome(s):
         return False
     return isPalindrome(s[1:-1])
 
-print(isPalindrome(string1))
-print(isPalindrome(string2))
+# print(isPalindrome(string1))
+# print(isPalindrome(string2))
 
 
 """ 9. Write a recursive function called someRecursive which accepts an array and a callback.
@@ -149,8 +149,8 @@ def someRecursive(arr, cb):
         return someRecursive(arr[1:], cb)
     return True
 
-print(someRecursive(arr1, isOdd))
-print(someRecursive(arr2, isOdd))
+# print(someRecursive(arr1, isOdd))
+# print(someRecursive(arr2, isOdd))
 
 
 # 10. Write a recursive function called flatten which accepts an array of arrays and return
@@ -168,8 +168,8 @@ def flatten(a):
             result.append(item)
     return result
 
-print(flatten(a1))
-print(flatten(a2))
+# print(flatten(a1))
+# print(flatten(a2))
 
 
 # 11. Write a recursive function called capitalizeFirst. Given an array
@@ -185,7 +185,7 @@ def capitalizeFirst(a):
     result.append(str[0].upper() + str[1:])
     return result + capitalizeFirst(a[1:])
 
-print(capitalizeFirst(A))
+# print(capitalizeFirst(A))
 
 
 # 12. Write a recursive function called nestedEvenSum. Return the sum of all
@@ -207,7 +207,7 @@ def nestedEvenSum(obj, sum=0):
             sum += obj[k]
     return sum
 
-print(nestedEvenSum(obj1))
+# print(nestedEvenSum(obj1))
 
 # 13. Write a function called stringifyNumbers which takes an object and finds all
 # of the values which are numbers and converts them to strings.
@@ -224,4 +224,25 @@ def stringifyNumbers(obj):
             newObj[k] = stringifyNumbers(newObj[k])
     return newObj
 
-print(stringifyNumbers(obj2))
+# print(stringifyNumbers(obj2))
+
+# 14. Write a function called collectStrings which accepts an object and returns an array
+# of all the values in the object that have typeof string.
+
+obj3 = { "num": 1, "test": "yes", "data": {"name": "Bob", "info": {"isRight": True, "random": "foo"}}}
+# return ["yes", "Bob", "foo"]
+
+def collectStrings(obj):
+    result = []
+    if len(obj) == 0:
+        return result
+    for k in obj:
+        if type(obj[k]) is str:
+            result.append(obj[k])
+        elif type(obj[k]) is dict:
+            result.extend(collectStrings(obj[k]))
+    return result
+
+print(collectStrings(obj3))
+
+
