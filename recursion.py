@@ -243,6 +243,4 @@ def collectStrings(obj):
             result.extend(collectStrings(obj[k]))
     return result
 
-print(collectStrings(obj3))
-
-
+#print(collectStrings(obj3))
