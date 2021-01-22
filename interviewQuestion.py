@@ -14,3 +14,19 @@ def findMissingNum(list, n):
     return sum1 - sum2
 
 print(findMissingNum(myList, 100))
+
+
+# 2. Given an array of integers and an integer, return indices of the two numbers
+# such as they add up to the integer. Don't use the same element twice.
+
+myList2 = [1,2,3,3,4,4,5,6]
+
+def findPairs(list, n):
+    for i in range(len(list)):
+        for j in range(i+1, len(list)):
+            if list[i] == list[j]:
+                continue
+            elif list[i] + list[j] == n:
+                print(i,j)
+
+findPairs(myList2, 6)
