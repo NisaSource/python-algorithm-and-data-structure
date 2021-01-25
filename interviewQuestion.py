@@ -43,7 +43,7 @@ for a in res:
 
 import numpy as np
 
-myArray = np.array([2,30,12,45,34,54,13,27,59,32,21,39,40,5,9]) #return 
+myArray = np.array([2,30,12,45,34,54,13,27,59,32,21,39,40,5,9]) #return 3186
 
 def findMaxProduct(arr):
     maxProduct = 0
@@ -57,4 +57,18 @@ def findMaxProduct(arr):
 
 print(findMaxProduct(myArray))
 
+# 4. Implement an algorithm to determine if a list has all unique chars
 
+myList3 = [2,30,12,45,34,54,13,27,59,32,21,39,40,5,9,12] #return False
+
+def isUnique(list):
+    newList = []
+    for i in list:
+        if i in newList:
+            print(i)
+            return False
+        else:
+            newList.append(i)
+    return True
+
+print(isUnique(myList3))
