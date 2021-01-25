@@ -22,11 +22,19 @@ print(findMissingNum(myList, 100))
 myList2 = [1,2,3,3,4,4,5,6]
 
 def findPairs(list, n):
+    pairs = []
     for i in range(len(list)):
         for j in range(i+1, len(list)):
             if list[i] == list[j]:
                 continue
             elif list[i] + list[j] == n:
-                print(i,j)
+                temp = []
+                temp.append(i)
+                temp.append(j)
+                pairs.append(temp)
+    return pairs
 
-findPairs(myList2, 6)
+res = findPairs(myList2, 6)
+for a in res:
+    print(a)
+
