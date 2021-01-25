@@ -72,3 +72,21 @@ def isUnique(list):
     return True
 
 print(isUnique(myList3))
+
+
+# 5. Permutation
+
+myList4 = [1,2,3]
+myList5 = [2,3,1]
+
+def isPermutation(list1, list2):
+    if len(list1) != len(list2):
+        return False
+    list1.sort()
+    list2.sort()
+    if list1 == list2:
+        return True
+    else:
+        return False
+
+print(isPermutation(myList4, myList5))
