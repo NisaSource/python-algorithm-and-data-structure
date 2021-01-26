@@ -28,3 +28,18 @@ def findMissingNumber(list, totalNum):
     return total - sumList
 
 print(findMissingNumber(myList3, 6))
+
+# 4. Write a function to find the duplicate number on given integer array/list
+
+myList4 = [1,1,2,3,3,4,4,5,5] #return [1,2,3,4,5]
+
+def removeDuplicate(list):
+    newList = []
+    for i in range(len(list)):
+        if list[i] in newList:
+            continue
+        else:
+            newList.append(list[i])
+    return newList
+
+print(removeDuplicate(myList4))
