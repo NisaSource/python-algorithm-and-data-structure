@@ -43,3 +43,20 @@ def removeDuplicate(list):
     return newList
 
 print(removeDuplicate(myList4))
+
+
+# 5. Write a function to find all pairs of an integer array whose sum is equal to given number
+
+myList5 = [2,4,1,5,3,-3,9]
+
+def pairSum(list, sum):
+    newList = []
+    for i in range(len(list)):
+        for j in range(i+1, len(list)):
+            temp = list[i] + list[j]
+            if temp == sum:
+                newList.append(str(list[i]) + "+" + str(list[j]))
+    return newList
+
+
+print(pairSum(myList5, 6))
