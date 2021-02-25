@@ -1,4 +1,4 @@
-
+# Implement a method popAt() which performs a pop operation on a specific sub-stack.
 
 class PlateStack():
     def __init__(self, maxPlate):
