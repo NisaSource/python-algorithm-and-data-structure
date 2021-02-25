@@ -1,3 +1,4 @@
 tutorial-env/
 .vscode
 dataStructure/__pycache__
+.idea
